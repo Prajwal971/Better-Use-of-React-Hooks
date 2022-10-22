@@ -73,7 +73,7 @@ Ex:-
   
   
   3)
-  do not use useState() simply....inFact try avoiding or minimising it.
+  do not use useEffect() simply....inFact try avoiding or minimising it. Dont use too many useEffect
   
   EX:-
   const[firstName, setFirstName] = useState("")
@@ -94,3 +94,7 @@ Ex:-
   
   instead of useEffect just write
   **const fullName = `${firstName}${lastName}`**
+  
+  4)
+    use useMemo() when the component variables dependency triggers useEffect() unnecessarly.
+    i.e sometime when using form component an invalid renders takes place when an form object executes. try using useMemo() so that u can just render the dependency which is required.
