@@ -72,4 +72,25 @@ Ex:-
   *In that case use useEffect and set the dependency to the count means the useEffect runs always when and only when the count value chnages*
   
   
+  3)
+  do not use useState() simply....inFact try avoiding or minimising it.
   
+  EX:-
+  const[firstName, setFirstName] = useState("")
+  const[lastName, setLastName] = useState("")
+  const[fullName, setFullName] = useState("")
+  
+  useEffect(() => {
+    setFullName(`${firstName}${lastName}`)
+  },[firstName,lastName])
+  
+  return
+    <>
+      // set all the inputs for the first and last name
+      {fullName}
+    </>
+    
+  **Optimised code**
+  
+  instead of useEffect just write
+  **const fullName = `${firstName}${lastName}`**
